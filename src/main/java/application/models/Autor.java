@@ -1,34 +1,43 @@
 package application.models;
 
 
-import javax.persistece.Entity;
-import javax.persistece.Table;
-import javax.persistece.Id;
+import javax.annotation.processing.Generated;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "autores")
+public class Autor {
 
-public class Autor{
 
-    private int id;
-    private String nome;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    public void setNome(String nome){
-        this.nome = nome;
-    }
 
-    public String getNome(){
-        return nome;
-    }
+  private String nome;
 
-    
-    public void setId(int id){
-        this.id = id;
-    }
-    
-    public int getId(){
-        return Id;
-    }
 
+  public void setId(int id) {
+    this.id = id;
+  }
+
+
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
+
+
+  public int getId() {
+    return id;
+  }
+
+
+  public String getNome() {
+    return nome;
+  }
 }
